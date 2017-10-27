@@ -1,10 +1,10 @@
-var beepBoop = function (number, name, direction) {
+var beepBoop = function (lowNumber, highNumber, name, direction) {
   var ranges = [];
 
-  if (!name || !number) {
-    alert("Please follow the directions. They are very simple");
+  if (!name || !lowNumber || !highNumber || (lowNumber >= highNumber)) {
+    alert("Please follow the directions. They are very simple.");
   } else if (direction === "lowFirst" || !direction) {
-    for (index = 0; index <= number; index++) {
+    for (index = lowNumber; index <= highNumber; index++) {
       if (index % 100 === 10) {
         ranges.push("Boop-Beep!");
       } else if (index % 3 === 0 && index !== 0) {
@@ -18,10 +18,9 @@ var beepBoop = function (number, name, direction) {
       }
     }
   } else if (direction === "highFirst") {
-    for (index = number; index >= 0; index--) {
+    for (index = highNumber; index >= lowNumber; index--) {
       if (index % 100 === 10) {
         ranges.push("Boop-Beep!");
-        //console.log(ranges);
       } else if (index % 3 === 0 && index !== 0) {
         ranges.push("I'm sorry, " + name + ". I'm afraid I can't do that.");
       } else if (index === 0 || index % 10 === 0) {
@@ -41,15 +40,16 @@ var beepBoop = function (number, name, direction) {
 $(document).ready(function() {
   $("#userInput").submit(function(event) {
     event.preventDefault();
-    var userNumber = parseInt($("#userNumber").val());
+    var lowNumber = parseInt($("#lowNumber").val());
+    var highNumber = parseInt($("#highNumber").val());
     var userName = $("#userName").val();
     var direction = $("input:radio[name=direction]:checked").val();
-    console.log(direction);
-    var results = beepBoop(userNumber, userName, direction);
+    var results = beepBoop(lowNumber, highNumber, userName, direction);
     results.forEach(function(result) {
       $("#output").append("<li>" + result + "</li>");
     });
     $(".result").show();
-    $(".number").text(userNumber);
+    $(".lowNumber").text(lowNumber);
+    $(".highNumber").text(highNumber);
   });
 });
