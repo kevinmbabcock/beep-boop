@@ -10,20 +10,25 @@
   </head>
   <body>
     <div class="container">
-      <h1>Let's play a game</h1>
-      <h3>Enter a number and see my counting skills!</h3>
+      <div class="jumbotron">
+        <h1>Let's play a game</h1>
+        <p></p>
+        <h3>Enter a number and see my counting skills!</h3>
+      </div>
       <form id="userInput">
-        <div class="form-group">
-          <label for="userName">Please enter your name:</label>
-          <input id="userName" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-          <label for="lowNumber">Please enter a number:</label>
-          <input id="lowNumber" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-          <label for="highNumber">Please enter a larger number:</label>
-          <input id="highNumber" class="form-control" type="text">
+        <div class="leftSide">
+          <div class="form-group">
+            <label for="userName">Please enter your name:</label>
+            <input id="userName" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="lowNumber">Please enter a number:</label>
+            <input id="lowNumber" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="highNumber">Please enter a larger number:</label>
+            <input id="highNumber" class="form-control" type="text">
+          </div>
         </div>
         <p>How would you like the numbers to be displayed?</p>
         <div class="radio">
@@ -38,13 +43,16 @@
             Highest to Lowest
           </label>
         </div>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn-primary">Submit</button>
       </form>
       <div class="result">
         <p></p>
         <p>Here are all the numbers between <span class="lowNumber"></span> and <span class="highNumber"></span>, with a few modifications: </p>
         <ul id="output">
         </ul>
+      </div>
+      <div class="oops">
+        <img src="img/Oops.jpg" alt="sign that says 'Oops'">
       </div>
     </div>
   </body>

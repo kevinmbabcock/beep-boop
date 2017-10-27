@@ -54,6 +54,7 @@ $(document).ready(function() {
     if (!userName || (!lowNumber && lowNumber !== 0) || !highNumber || (lowNumber >= highNumber) || lowNumber < 0) {
       //if no name or numbers are entered, or if numbers dont satisfy conditions, keep 'result' class hidden
       $(".results").hide();
+      $(".oops").show();
     } else {
       $(".lowNumber").text(lowNumber);
       $(".highNumber").text(highNumber);
