@@ -14,6 +14,8 @@ This application will display all numbers in the given range, with the following
 * if the number contains a 1 AND a 0, it will be replaced with "Beep-Boop!"
 * if multiple rules apply, (i.e. '21' has a 1 and is divisible by 3), the latter rule takes precedence
 
+SPECS:
+
 1.	Example input: 0
 ⁃	example output [Beep!]
 2.	Example input: 2
