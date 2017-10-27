@@ -5,6 +5,8 @@ var beepBoop = function (number) {
       range.push("Beep!");
     } else if (index === 1 || index % 10 === 1) {
       range.push("Boop!");
+    } else if (index % 3 === 0) {
+      range.push("I'm sorry, Dave. I'm afraid I can't do that.");
     }
     else {
       range.push(index);
@@ -20,6 +22,7 @@ $(document).ready(function() {
     event.preventDefault();
     var userNumber = $("#userNumber").val();
     var result = beepBoop(userNumber);
+    console.log(result);
     $(".result").show();
     $("#output").text(result);
   });
