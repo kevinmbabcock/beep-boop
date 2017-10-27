@@ -3,8 +3,10 @@ var beepBoop = function (number) {
   for (index = 0; index <= number; index++) {
     if (index === 0 || index % 10 === 0) {
       range.push("Beep!");
-      console.log(range);
-    } else {
+    } else if (index === 1 || index % 10 === 1) {
+      range.push("Boop!");
+    }
+    else {
       range.push(index);
     }
   }
