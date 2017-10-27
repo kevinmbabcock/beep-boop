@@ -1,19 +1,19 @@
 var beepBoop = function (number) {
-  var range = [];
+  var ranges = [];
   for (index = 0; index <= number; index++) {
     if (index % 100 === 10) {
-      range.push("Boop-Beep!");
+      ranges.push("Boop-Beep!");
     } else if (index % 3 === 0 && index !== 0) {
-      range.push("I'm sorry, Dave. I'm afraid I can't do that.");
+      ranges.push("I'm sorry, Dave. I'm afraid I can't do that.");
     } else if (index === 0 || index % 10 === 0) {
-      range.push("Beep!");
+      ranges.push("Beep!");
     } else if (index === 1 || index % 10 === 1 || (index > 10 && index < 20)) {
-      range.push("Boop!");
+      ranges.push("Boop!");
     } else {
-      range.push(index);
+      ranges.push(index);
     }
   }
-  return range;
+  return ranges;
 }
 
 
@@ -21,9 +21,12 @@ var beepBoop = function (number) {
 $(document).ready(function() {
   $("#userInput").submit(function(event) {
     event.preventDefault();
-    var userNumber = $("#userNumber").val();
-    var result = beepBoop(userNumber);
+    var userNumber = parseInt($("#userNumber").val());
+    var results = beepBoop(userNumber);
+    results.forEach(function(item) {
+      $("#output").append("<li>" + item + "</li>");
+    });
     $(".result").show();
-    $("#output").text(result);
+    // $("#output").text(results);
   });
 });
