@@ -1,10 +1,7 @@
 var beepBoop = function (lowNumber, highNumber, name, direction) {
   var ranges = [];
 
-  if (!name || (!lowNumber && lowNumber !== 0) || !highNumber || (lowNumber >= highNumber) || lowNumber < 0) {
-    //send alert if no name or numbers are entered, or if numbers dont satisfy conditions
-    alert("Please follow the directions. They are very simple.");
-  } else if (direction === "highFirst") { //if user wants to display highest number first
+  if (direction === "highFirst") { //if user wants to display highest number first
     for (index = highNumber; index >= lowNumber; index--) {
       if (index % 100 === 10) { //add "Beep-Boop!" if both '1' and '0'
         ranges.push("Beep-Boop!");
@@ -58,6 +55,7 @@ $(document).ready(function() {
     } else {
       $(".lowNumber").text(lowNumber);
       $(".highNumber").text(highNumber);
+      $(".oops").hide();
       $(".result").show();
     }
   });

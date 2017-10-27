@@ -12,25 +12,24 @@
     <div class="container">
       <div class="jumbotron">
         <h1>Let's play a game</h1>
-        <p></p>
-        <h3>Enter a number and see my counting skills!</h3>
       </div>
+      <h3>Enter a number and see my counting skills!</h3>
       <form id="userInput">
         <div class="leftSide">
           <div class="form-group">
-            <label for="userName">Please enter your name:</label>
+            <label for="userName"><strong>Please enter your name:</strong></label>
             <input id="userName" class="form-control" type="text">
           </div>
           <div class="form-group">
-            <label for="lowNumber">Please enter a number:</label>
+            <label for="lowNumber"><strong>Please enter a number:</strong></label>
             <input id="lowNumber" class="form-control" type="text">
           </div>
           <div class="form-group">
-            <label for="highNumber">Please enter a larger number:</label>
+            <label for="highNumber"><strong>Please enter a larger number:</strong></label>
             <input id="highNumber" class="form-control" type="text">
           </div>
         </div>
-        <p>How would you like the numbers to be displayed?</p>
+        <p><strong>How would you like the numbers to be displayed?</strong></p>
         <div class="radio">
           <label>
             <input type="radio" name="direction" value="lowFirst">
@@ -43,6 +42,27 @@
             Highest to Lowest
           </label>
         </div>
+        <p></p>
+        <p><strong>Optional: Are you having a nice day?</strong></p>
+        <div class="radio">
+          <label>
+            <input type="radio" name="day" value="yes">
+            Yes, of course!
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="day" value="no">
+            <em>No! Don't talk to me!</em>
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="day" value="maybe">
+            Ask me again in an hour
+          </label>
+        </div>
+        <p></p>
         <button type="submit" class="btn-primary">Submit</button>
       </form>
       <div class="result">
@@ -52,6 +72,7 @@
         </ul>
       </div>
       <div class="oops">
+        <h2><strong>Please follow the directions! They are very simple.</strong></h2>
         <img src="img/Oops.jpg" alt="sign that says 'Oops'">
       </div>
     </div>
